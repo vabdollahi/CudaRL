@@ -81,7 +81,7 @@ find src include tests \( -name "*.cpp" -o -name "*.cu" -o -name "*.hpp" \) -pri
 if [[ ! -f build/compile_commands.json ]]; then
     echo "⚙️  Generating compile_commands.json..."
     mkdir -p build
-    cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -S . -B build
+    cmake -DUSE_CUDA=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -S . -B build
 fi
 
 TIDY_FIX_FLAG=""
